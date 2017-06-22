@@ -7,7 +7,7 @@ class Picture extends Component {
         uri: this.props.name
       };
       return (
-        <Image source={pic} style={{width: 193, height: 110}}/>
+        <Image source={pic} style={{width: 400, height: 200}}/>
       );
   }
 }
@@ -17,7 +17,7 @@ export default class LotsofPictures extends Component {
     return (
       <View style={{alignItems:'center'}}>
         <Picture name='https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/10613148_1244376775587972_376261394166346151_n.jpg?oh=a2b9df10e01874648fb5c8c9aaeaac9a&oe=59C847F0'/>
-        <Picture name='https://cdn-webimages.wimages.net/04f6ec54bc5d52188178724de37dd278a8e393-wide-thumbnail.jpg?v=4'/>
+        <Picture name='https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/19145884_10211228744652465_1508890654774567987_n.jpg?oh=2cee0d6d955e10191e4351c13cb9fa4e&oe=59DE8669'/>
       </View>
     );
   }
