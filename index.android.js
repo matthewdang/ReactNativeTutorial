@@ -1,37 +1,28 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 
-class Blink extends Component{
-  constructor(props) {
-    super(props) ;
-    this.state = { showText: true } ;
-
-    // Toggle the state of every second
-    setInterval (() => {
-      this.setState(previousState => {
-        return { showText: !previousState.showText } ;
-      });
-    }, 1000) ;
-  }
-
+export default class LotsofStyles extends Component {
   render() {
-    let display = this.state.showText ? this.props.text : ' ';
     return (
-      <Text>{display}</Text>
-    ) ;
+        <View>
+          <Text style={styles.red}>just red</Text>
+          <Text style={styles.bigblue}>just bigblue</Text>
+          <Text style={[styles.bigblue, styles.red]}>bigblue, then red</Text>
+          <Text style={[styles.red, styles.bigblue]}>red, then bigblue</Text>
+        </View>
+    );
   }
 }
 
-export default class BlinkApp extends Component {
-  render () {
-    return (
-      <View>
-        <Blink text='I love to blink' />
-        <Blink text='Yes bllinking is so great' />
-        <Blink text='Why did they ever take this out of HTML' />
-        <Blink text='Look at me look at me look at me' />
-      </View>
-    ) ;
-  }
-}//skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => BlinkApp);
+const styles = StyleSheet.create({
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
+
+AppRegistry.registerComponent ('AwesomeProject', () => LotsOfStyles);
