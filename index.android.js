@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View } from 'react-native';
+import { AppRegistry, Image, View } from 'react-native';
 
-class Greeting extends Component {
+class Picture extends Component {
   render() {
-    return (
-      <Text>Hello {this.props.name}!</Text>
-    );
+      let pic = {
+        uri: this.props.name
+      };
+      return (
+        <Image source={pic} style={{width: 193, height: 110}}/>
+      );
   }
 }
 
-export default class LotsOfGreetings extends Component {
+export default class LotsofPictures extends Component {
   render() {
     return (
-      <View style={{alignItems: 'center'}}>
-        <Greeting name='Melissa Leong' />
-        <Greeting name='Kevin Bao' />
-        <Greeting name='Tracey Chan' />
-        <Greeting name='Justin Leong' />
+      <View style={{alignItems:'center'}}>
+        <Picture name='https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/10613148_1244376775587972_376261394166346151_n.jpg?oh=a2b9df10e01874648fb5c8c9aaeaac9a&oe=59C847F0'/>
+        <Picture name='https://cdn-webimages.wimages.net/04f6ec54bc5d52188178724de37dd278a8e393-wide-thumbnail.jpg?v=4'/>
       </View>
     );
   }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => LotsOfGreetings);
+AppRegistry.registerComponent('AwesomeProject', () => LotsofPictures);
